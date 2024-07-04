@@ -3,10 +3,13 @@ using TMPro;
 
 public class Mishenes : MonoBehaviour
 {
-    public static float cash = 3000f;
+    public static float totalCash = 3000f;
     public static float bet = 5f;
 
-    public TextMeshProUGUI cashText;
+    public TextMeshProUGUI totalCashText;
+    public TextMeshProUGUI winCashText;
+
+    private float winCash;
 
     public float greenKoef;
     public float yellowKoef;
@@ -16,29 +19,35 @@ public class Mishenes : MonoBehaviour
     {
         if (collision.gameObject.tag == "Green ball")
         {
-            CashWin(greenKoef);
+            CashCalculating(greenKoef);
             Destroy(collision.gameObject);
         }
-        else
-        if (collision.gameObject.tag == "Red ball")
-        {
-            CashWin(redKoef);
-            Destroy(collision.gameObject);
-        }
-        else
-        if (collision.gameObject.tag == "Yellow ball")
-        {
-            CashWin(yellowKoef);
-            Destroy(collision.gameObject);
-        }
+        //else
+        //if (collision.gameObject.tag == "Red ball")
+        //{
+        //    CashWin(redKoef);
+        //    Destroy(collision.gameObject);
+        //}
+        //else
+        //if (collision.gameObject.tag == "Yellow ball")
+        //{
+        //    CashWin(yellowKoef);
+        //    Destroy(collision.gameObject);
+        //}
 
-        Debug.Log(cash);
     }
 
-    public void CashWin(float koef)
+    public void CashCalculating(float koef)
     {
-        cash += koef * bet;
+        winCash = bet * koef;
+        totalCash += winCash;
 
+        winCashText.text = "+" + CashString(winCash);
+        totalCashText.text = CashString(totalCash);
+    }
+
+    public static string CashString(float cash)
+    {
         float cashInt = Mathf.Floor(cash);
         float cashFraction = (cash - cashInt) * 100;
         string cashFrcStr;
@@ -48,6 +57,6 @@ public class Mishenes : MonoBehaviour
         else
             cashFrcStr = cashFraction.ToString();
 
-        cashText.text = cashInt + "." + cashFrcStr + " USD"; 
+        return cashInt + "." + cashFrcStr + " USD"; 
     }
 }
