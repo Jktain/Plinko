@@ -7,9 +7,11 @@ public class Mishenes : MonoBehaviour
 {
     public static float totalCash = 3000f;
     public static float bet = 5f;
+    public static int hitCounter = 0;
 
     public TextMeshProUGUI totalCashText;
     public TextMeshProUGUI winCashText;
+    public TextMeshProUGUI hitCounterText;
     public GameObject winCashObj;
 
     public float greenKoef;
@@ -62,16 +64,17 @@ public class Mishenes : MonoBehaviour
     {
         winCash = bet * koef;
         totalCash += winCash;
-
-        winCashText.text = "+" + CashString(winCash);
-        totalCashText.text = CashString(totalCash);
+        hitCounter++;
+        hitCounterText.text = "Number of hits: " + hitCounter;
+        winCashText.text = "+" + CashString(winCash) + " USD";
+        totalCashText.text = CashString(totalCash) + " USD";
         winCashImage.color = winColor;
     }
 
     public static string CashString(float cash)
     {
-        float cashInt = Mathf.Floor(cash);
-        float cashFraction = (cash - cashInt) * 100;
+        int cashInt = (int)cash;
+        int cashFraction = (int)((cash - cashInt) * 100);
         string cashFrcStr;
 
         if (cashFraction < 10) 
@@ -79,6 +82,6 @@ public class Mishenes : MonoBehaviour
         else
             cashFrcStr = cashFraction.ToString();
 
-        return cashInt + "." + cashFrcStr + " USD"; 
+        return cashInt + "." + cashFrcStr; 
     }
 }

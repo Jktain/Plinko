@@ -11,7 +11,7 @@ public class BallsSpawn : MonoBehaviour
     public void BallSpawn()
     {
         Mishenes.totalCash -= Mishenes.bet;
-        totalCashText.text = Mishenes.CashString(Mishenes.totalCash);
+        totalCashText.text = Mishenes.CashString(Mishenes.totalCash) + " USD";
 
         float x = Random.Range(-0.2f, 0.2f);
         float y = Random.Range(3f, 3.2f);
