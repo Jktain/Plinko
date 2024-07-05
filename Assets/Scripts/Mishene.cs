@@ -1,5 +1,7 @@
 using UnityEngine;
+using System.Collections;
 using TMPro;
+using UnityEngine.UI;
 
 public class Mishenes : MonoBehaviour
 {
@@ -8,42 +10,62 @@ public class Mishenes : MonoBehaviour
 
     public TextMeshProUGUI totalCashText;
     public TextMeshProUGUI winCashText;
-
-    private float winCash;
+    public GameObject winCashObj;
 
     public float greenKoef;
     public float yellowKoef;
     public float redKoef;
 
+    private float winCash;
+    private Image winCashImage;
+
+    private void Start()
+    {
+        winCashImage = winCashObj.GetComponent<Image>();
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Green ball")
         {
-            CashCalculating(greenKoef);
+            CashCalculating(greenKoef, new Color(0, 0.586f, 0));
             Destroy(collision.gameObject);
         }
-        //else
-        //if (collision.gameObject.tag == "Red ball")
-        //{
-        //    CashWin(redKoef);
-        //    Destroy(collision.gameObject);
-        //}
-        //else
-        //if (collision.gameObject.tag == "Yellow ball")
-        //{
-        //    CashWin(yellowKoef);
-        //    Destroy(collision.gameObject);
-        //}
+        else
+        if (collision.gameObject.tag == "Red ball")
+        {
+            CashCalculating(redKoef, new Color(255, 0, 0));
+            Destroy(collision.gameObject);
+        }
+        else
+        if (collision.gameObject.tag == "Yellow ball")
+        {
+            CashCalculating(yellowKoef, new Color(0.67f, 0.67f, 0));
+            Destroy(collision.gameObject);
+        }
 
+        if(winCash > 0)
+        {
+            StopCoroutine(WinCashCoroutine());
+            winCashObj.SetActive(true);
+            StartCoroutine(WinCashCoroutine());
+        }
     }
 
-    public void CashCalculating(float koef)
+    private IEnumerator WinCashCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+        winCashObj.SetActive(false);
+    }
+
+    public void CashCalculating(float koef, Color winColor)
     {
         winCash = bet * koef;
         totalCash += winCash;
 
         winCashText.text = "+" + CashString(winCash);
         totalCashText.text = CashString(totalCash);
+        winCashImage.color = winColor;
     }
 
     public static string CashString(float cash)
