@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
-using System.Globalization; 
+using System.Globalization;
+using System;
 
 public class Btns : MonoBehaviour
 {
@@ -8,8 +9,13 @@ public class Btns : MonoBehaviour
     public TMP_InputField betInput;
     public void ResetCounter()
     {
-        Mishenes.hitCounter = 0;
+        Target.hitCounter = 0;
         hitCounterText.text = "Number of hits: 0";
+    }
+
+    public void HelloWorld(string message)
+    {
+        Debug.Log(message);
     }
 
     public void BetAcept()
@@ -21,12 +27,12 @@ public class Btns : MonoBehaviour
             else
             if (result > 100f)
                 result = 100f;
-            Mishenes.bet = result;
-            betInput.text = Mishenes.CashString(Mishenes.bet);
+            Target.bet = result;
+            betInput.text = Target.MakeCashString(Target.bet);
         }
         else
         {
-            Debug.LogError("Не вдалося перетворити введене значення у float.");
+            Debug.LogError("Error while converting the value to the float type");
         }
     }
 }

@@ -440,6 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalCashText: {fileID: 987061767}
   winCashText: {fileID: 448658801}
+  hitCounterText: {fileID: 0}
   winCashObj: {fileID: 1984768103}
   greenKoef: 18
   yellowKoef: 50
@@ -895,6 +896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalCashText: {fileID: 987061767}
   winCashText: {fileID: 448658801}
+  hitCounterText: {fileID: 0}
   winCashObj: {fileID: 1984768103}
   greenKoef: 1.2
   yellowKoef: 1.4
@@ -1058,7 +1060,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 347638643}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BallsSpawn, Assembly-CSharp
         m_MethodName: BallSpawn
         m_Mode: 1
@@ -1395,6 +1397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalCashText: {fileID: 987061767}
   winCashText: {fileID: 448658801}
+  hitCounterText: {fileID: 0}
   winCashObj: {fileID: 1984768103}
   greenKoef: 1
   yellowKoef: 0.5
@@ -1545,6 +1548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalCashText: {fileID: 987061767}
   winCashText: {fileID: 448658801}
+  hitCounterText: {fileID: 0}
   winCashObj: {fileID: 1984768103}
   greenKoef: 1.6
   yellowKoef: 2.5
@@ -1891,52 +1895,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &347638641
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 347638642}
-  - component: {fileID: 347638643}
-  m_Layer: 0
-  m_Name: Yellow balls
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &347638642
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 347638641}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.18, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2098899509}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &347638643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 347638641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73b660acee99539449c97fce5eb030ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ballPrefab: {fileID: 7311373152184564189, guid: f2a43726931a20e4ab655346eda9362c, type: 3}
-  totalCashText: {fileID: 987061767}
 --- !u!1 &371461031
 GameObject:
   m_ObjectHideFlags: 0
@@ -2596,6 +2554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalCashText: {fileID: 987061767}
   winCashText: {fileID: 448658801}
+  hitCounterText: {fileID: 0}
   winCashObj: {fileID: 1984768103}
   greenKoef: 3.2
   yellowKoef: 20
@@ -2746,6 +2705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalCashText: {fileID: 987061767}
   winCashText: {fileID: 448658801}
+  hitCounterText: {fileID: 0}
   winCashObj: {fileID: 1984768103}
   greenKoef: 1
   yellowKoef: 0.5
@@ -2896,6 +2856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalCashText: {fileID: 987061767}
   winCashText: {fileID: 448658801}
+  hitCounterText: {fileID: 0}
   winCashObj: {fileID: 1984768103}
   greenKoef: 1.1
   yellowKoef: 0.7
@@ -3065,7 +3026,7 @@ Transform:
   m_Children:
   - {fileID: 1199225354}
   - {fileID: 147272011}
-  - {fileID: 2098899509}
+  - {fileID: 1856591846}
   m_Father: {fileID: 615748958}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &473457155
@@ -3514,7 +3475,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1292740302}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BallsSpawn, Assembly-CSharp
         m_MethodName: BallSpawn
         m_Mode: 1
@@ -3710,6 +3671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalCashText: {fileID: 987061767}
   winCashText: {fileID: 448658801}
+  hitCounterText: {fileID: 0}
   winCashObj: {fileID: 1984768103}
   greenKoef: 1.3
   yellowKoef: 1.7
@@ -3860,6 +3822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalCashText: {fileID: 987061767}
   winCashText: {fileID: 448658801}
+  hitCounterText: {fileID: 0}
   winCashObj: {fileID: 1984768103}
   greenKoef: 1.1
   yellowKoef: 0.7
@@ -4180,6 +4143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalCashText: {fileID: 987061767}
   winCashText: {fileID: 448658801}
+  hitCounterText: {fileID: 0}
   winCashObj: {fileID: 1984768103}
   greenKoef: 1.3
   yellowKoef: 1.7
@@ -5986,10 +5950,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalCashText: {fileID: 987061767}
   winCashText: {fileID: 448658801}
+  hitCounterText: {fileID: 0}
   winCashObj: {fileID: 1984768103}
   greenKoef: 0.5
   yellowKoef: 0.2
   redKoef: 0
+--- !u!1 &1276602483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1276602485}
+  - component: {fileID: 1276602484}
+  m_Layer: 0
+  m_Name: Game manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1276602484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276602483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c82c88ab3a6ceba4980c8cf88cf30f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1276602485
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276602483}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1282163532
 GameObject:
   m_ObjectHideFlags: 0
@@ -6136,56 +6145,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalCashText: {fileID: 987061767}
   winCashText: {fileID: 448658801}
+  hitCounterText: {fileID: 0}
   winCashObj: {fileID: 1984768103}
   greenKoef: 3.2
   yellowKoef: 20
   redKoef: 100
---- !u!1 &1292740301
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1292740303}
-  - component: {fileID: 1292740302}
-  m_Layer: 0
-  m_Name: Red balls
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1292740302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292740301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73b660acee99539449c97fce5eb030ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ballPrefab: {fileID: 7311373152184564189, guid: 91ff581a5a423d94f81fc68a2fc2a522, type: 3}
-  totalCashText: {fileID: 987061767}
---- !u!4 &1292740303
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292740301}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.18, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2098899509}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1311083360
 GameObject:
   m_ObjectHideFlags: 0
@@ -7016,6 +6980,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalCashText: {fileID: 987061767}
   winCashText: {fileID: 448658801}
+  hitCounterText: {fileID: 0}
   winCashObj: {fileID: 1984768103}
   greenKoef: 1.6
   yellowKoef: 2.5
@@ -7136,10 +7101,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1856591845}
         m_TargetAssemblyTypeName: BallsSpawn, Assembly-CSharp
         m_MethodName: BallSpawn
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 7311373152184564189, guid: 7a046e1ae28ea3c41b4f31dae9b90e85, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7299,6 +7264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalCashText: {fileID: 987061767}
   winCashText: {fileID: 448658801}
+  hitCounterText: {fileID: 0}
   winCashObj: {fileID: 1984768103}
   greenKoef: 1.2
   yellowKoef: 1.4
@@ -7449,6 +7415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalCashText: {fileID: 987061767}
   winCashText: {fileID: 448658801}
+  hitCounterText: {fileID: 0}
   winCashObj: {fileID: 1984768103}
   greenKoef: 18
   yellowKoef: 50
@@ -7787,7 +7754,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b660acee99539449c97fce5eb030ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballPrefab: {fileID: 7311373152184564189, guid: 7a046e1ae28ea3c41b4f31dae9b90e85, type: 3}
   totalCashText: {fileID: 987061767}
 --- !u!4 &1856591846
 Transform:
@@ -7802,7 +7768,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2098899509}
+  m_Father: {fileID: 461198993}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1898760837
 GameObject:
@@ -7918,40 +7884,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984768103}
   m_CullTransparentMesh: 1
---- !u!1 &2098899508
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2098899509}
-  m_Layer: 0
-  m_Name: Ball spawners
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2098899509
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2098899508}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1856591846}
-  - {fileID: 1292740303}
-  - {fileID: 347638642}
-  m_Father: {fileID: 461198993}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -7960,3 +7892,4 @@ SceneRoots:
   - {fileID: 615748958}
   - {fileID: 1085922910}
   - {fileID: 473457158}
+  - {fileID: 1276602485}
