@@ -1060,9 +1060,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1856591845}
         m_TargetAssemblyTypeName: BallsSpawn, Assembly-CSharp
-        m_MethodName: BallSpawn
+        m_MethodName: AutoPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3474,19 +3474,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1741362048}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BallsSpawn, Assembly-CSharp
-        m_MethodName: BallSpawn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &785800041
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5984,6 +5972,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82c88ab3a6ceba4980c8cf88cf30f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitCounterText: {fileID: 0}
+  betInput: {fileID: 0}
 --- !u!4 &1276602485
 Transform:
   m_ObjectHideFlags: 0
@@ -7755,6 +7745,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalCashText: {fileID: 987061767}
+  ballSpawner: {fileID: 1856591844}
+  greenBallPrefab: {fileID: 7311373152184564189, guid: 7a046e1ae28ea3c41b4f31dae9b90e85, type: 3}
+  yellowBallPrefab: {fileID: 7311373152184564189, guid: f2a43726931a20e4ab655346eda9362c, type: 3}
+  redBallPrefab: {fileID: 7311373152184564189, guid: 91ff581a5a423d94f81fc68a2fc2a522, type: 3}
+  ballSpawnPeriod: 0.4
+  ballsCount: 5
+  ballColorsCount: 1
+  green: -1
+  yellow: -1
+  red: 0
 --- !u!4 &1856591846
 Transform:
   m_ObjectHideFlags: 0

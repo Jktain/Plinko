@@ -2,31 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System;
 
 public class BallsSpawn : MonoBehaviour
 {
     public TextMeshProUGUI totalCashText;
-    public GameObject ballSpawner;
     public GameObject greenBallPrefab;
     public GameObject yellowBallPrefab;
     public GameObject redBallPrefab;
     public float ballSpawnPeriod;
     public int ballsCount;
     public int ballColorsCount;
-    public int green;
-    public int yellow;
-    public int red;
+    public int greenTurn;
+    public int yellowTurn;
+    public int redTurn;
 
-    public static void BallSpawn(GameObject ballPrefab, TextMeshProUGUI totalCashText, GameObject spawner)
+    public void BallSpawn(GameObject ballPrefab)
     {
         Target.totalCash -= Target.bet;
         totalCashText.text = Target.MakeCashString(Target.totalCash) + " USD";
 
-        float x = UnityEngine.Random.Range(-0.2f, 0.2f);
-        float y = UnityEngine.Random.Range(3f, 3.2f);
+        float x = Random.Range(-0.2f, 0.2f);
+        float y = Random.Range(3f, 3.2f);
 
-        Instantiate(ballPrefab, new Vector3(x, y), Quaternion.identity, spawner.gameObject.transform);
+        Instantiate(ballPrefab, new Vector3(x, y), Quaternion.identity, transform);
     }
 
     public void AutoPlay()
@@ -38,19 +36,22 @@ public class BallsSpawn : MonoBehaviour
     {
         for (int i = 0; i < ballsCount; i++)
         {
-            if (green == 0 && (i % ballColorsCount == green))
+            if (greenTurn == 0 && (i % ballColorsCount == greenTurn))
             {
-                BallSpawn(greenBallPrefab, totalCashText, ballSpawner);
+                BallSpawn(greenBallPrefab);
             }
-            else if (yellow >= 0 && (i % ballColorsCount == yellow))
+            else if (yellowTurn >= 0 && (i % ballColorsCount == yellowTurn))
             {
-                BallSpawn(yellowBallPrefab, totalCashText, ballSpawner);
+                BallSpawn(yellowBallPrefab);
             }
-            else if (red >= 0 && (i % ballColorsCount == red))
+            else if (redTurn >= 0 && (i % ballColorsCount == redTurn))
             {
-                BallSpawn(redBallPrefab, totalCashText, ballSpawner);
+                BallSpawn(redBallPrefab);
             }
+
             yield return new WaitForSeconds(ballSpawnPeriod);
         }
     }
+
+
 }
