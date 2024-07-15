@@ -19138,11 +19138,14 @@ MonoBehaviour:
   redBallPrefab: {fileID: 7311373152184564189, guid: 91ff581a5a423d94f81fc68a2fc2a522, type: 3}
   ballSpawnPeriod: 0.4
   ballsCount: 20
-  ballColorsCount: 2
-  greenTurn: 0
-  yellowTurn: 1
-  redTurn: -5
-  limit: 2900
+  greenBool: 1
+  yellowBool: 1
+  redBool: 1
+  minCashLimit: 2800
+  RangeMinX: 0.2
+  RangeMinY: 3
+  RangeMaxX: 0.2
+  RangeMaxY: 3.2
 --- !u!1 &2111332549
 GameObject:
   m_ObjectHideFlags: 0
