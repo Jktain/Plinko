@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -11,25 +10,45 @@ public class BallsSpawn : MonoBehaviour
     public GameObject redBallPrefab;
     public float ballSpawnPeriod;
     public int ballsCount;
-    public int ballColorsCount;
-    public int greenTurn;
-    public int yellowTurn;
-    public int redTurn;
+    private int ballColorsCount = 3;
+
+    private int greenTurn = 0;
+    private int yellowTurn = 1;
+    private int redTurn = 2;
+
+    public bool greenBool;
+    public bool yellowBool;
+    public bool redBool;
+
+    public float minCashLimit;
+
+    public float RangeMinX = 0.2f;
+    public float RangeMinY = 3f;
+    public float RangeMaxX = 0.2f;
+    public float RangeMaxY = 3.2f;
 
     public void BallSpawn(GameObject ballPrefab)
     {
         Target.totalCash -= Target.bet;
         totalCashText.text = Target.MakeCashString(Target.totalCash) + " USD";
 
-        float x = Random.Range(-0.2f, 0.2f);
-        float y = Random.Range(3f, 3.2f);
+        float x = Random.Range(RangeMinX, RangeMaxX);
+        float y = Random.Range(RangeMinY, RangeMaxY);
 
         Instantiate(ballPrefab, new Vector3(x, y), Quaternion.identity, transform);
     }
 
     public void AutoPlay()
     {
-        StartCoroutine(AutoPlayCoroutine());
+        if(ballColorsCount == 0)
+        {
+            Debug.Log("Choose at least 1 ball color");
+        }
+        else
+        {
+            ChooseColorTurn();
+            StartCoroutine(AutoPlayCoroutine());
+        }
     }
 
     public IEnumerator AutoPlayCoroutine()
@@ -49,9 +68,40 @@ public class BallsSpawn : MonoBehaviour
                 BallSpawn(redBallPrefab);
             }
 
+            if(Target.totalCash < minCashLimit)
+            {
+                break;
+            }
+            
             yield return new WaitForSeconds(ballSpawnPeriod);
         }
+
+        greenTurn = 0;
+        yellowTurn = 1;
+        redTurn = 2;
+}
+    
+    public void ChooseColorTurn()
+    {
+        if (!greenBool)
+        {
+            greenTurn = -1;
+            yellowTurn = 0;
+            redTurn = 1;
+            ballColorsCount--;
+        }
+
+        if (!yellowBool)
+        {
+            yellowTurn -= 2;
+            redTurn--;
+            ballColorsCount--;
+        }
+
+        if (!redBool)
+        {
+            redTurn -= 3;
+            ballColorsCount--;
+        }
     }
-
-
 }
