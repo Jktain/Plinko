@@ -14,6 +14,7 @@ public class Target : MonoBehaviour
     public TextMeshProUGUI hitCounterText;
     public GameObject winCashObj;
 
+
     public float greenKoef;
     public float yellowKoef;
     public float redKoef;

@@ -6,10 +6,15 @@ using UnityEngine.UI;
 public class BallsSpawn : MonoBehaviour
 {
     public TextMeshProUGUI totalCashText;
+    public TextMeshProUGUI errorText;
+
     public GameObject greenBallPrefab;
     public GameObject yellowBallPrefab;
     public GameObject redBallPrefab;
     public GameObject autoPlayPanel;
+    public GameObject mainGamePanel;
+    public GameObject errorPanel;
+
     public float ballSpawnPeriod;
     public int ballsCount;
     private int ballColorsCount = 3;
@@ -21,7 +26,7 @@ public class BallsSpawn : MonoBehaviour
     public Toggle greenToggle;
     public Toggle yellowToggle;
     public Toggle redToggle;
-
+    public Toggle[] CountOfBallsToggles;
     public static float minCashLimit;
 
     public float RangeMinX = 0.2f;
@@ -42,14 +47,20 @@ public class BallsSpawn : MonoBehaviour
 
     public void AutoPlay()
     {
-        ChooseColorTurn();
-        if (ballColorsCount == 0)
+        if (greenToggle.isOn && yellowToggle.isOn && redToggle.isOn)
         {
-            Debug.Log("Choose at least 1 ball color");
+            ErrorsManager.ShowErrorWindow(errorPanel, errorText, "Choose at least 1 ball color");
+        }
+        else
+        if (CountOfBallsToggles[0].isOn && CountOfBallsToggles[1].isOn && CountOfBallsToggles[2].isOn && CountOfBallsToggles[3].isOn && CountOfBallsToggles[4].isOn && CountOfBallsToggles[5].isOn)
+        {
+            ErrorsManager.ShowErrorWindow(errorPanel, errorText, "Choose count of balls");
         }
         else
         {
+            ChooseColorTurn();
             autoPlayPanel.SetActive(false);
+            mainGamePanel.SetActive(true);
             StartCoroutine(AutoPlayCoroutine());
         }
     }
@@ -82,6 +93,7 @@ public class BallsSpawn : MonoBehaviour
         greenTurn = 0;
         yellowTurn = 1;
         redTurn = 2;
+        ballColorsCount = 3;
 }
     
     public void ChooseColorTurn()

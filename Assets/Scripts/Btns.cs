@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class Btns : MonoBehaviour
 {
+    public TextMeshProUGUI errorText;
     public TextMeshProUGUI hitCounterText;
     public TMP_InputField betInput;
     public TMP_InputField minCashLimitInput;
+    public GameObject errorPanel;
 
     private void Start()
     {
@@ -34,7 +36,7 @@ public class Btns : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Error while converting the value to the float type");
+            ErrorsManager.ShowErrorWindow(errorPanel, errorText, "Error while converting the value to the float type");
         }
     }
 
@@ -43,10 +45,10 @@ public class Btns : MonoBehaviour
         if (float.TryParse(enteredData, out float limit))
         {
             if (limit < 0)
-                Debug.Log("limit can`t be lower than 0");
+                ErrorsManager.ShowErrorWindow(errorPanel, errorText, "limit can`t be lower than 0");
             else
             if (limit > Target.totalCash)
-                Debug.Log("limit can`t be higher than your current cash");
+                ErrorsManager.ShowErrorWindow(errorPanel, errorText, "limit can`t be higher than your current cash");
             else
                 BallsSpawn.minCashLimit = limit;
 
@@ -54,7 +56,7 @@ public class Btns : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Error while converting the value to the float type");
+            ErrorsManager.ShowErrorWindow(errorPanel, errorText, "Error while converting the value to the float type");
         }
     }
 }
