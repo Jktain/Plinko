@@ -16,7 +16,6 @@ public class BallsSpawn : MonoBehaviour
     public GameObject errorPanel;
 
     public float ballSpawnPeriod;
-    public int ballsCount;
     private int ballColorsCount = 3;
 
     private int greenTurn = 0;
@@ -67,7 +66,7 @@ public class BallsSpawn : MonoBehaviour
 
     public IEnumerator AutoPlayCoroutine()
     {
-        for (int i = 0; i < ballsCount; i++)
+        for (int i = 0; i < TogglesManager.ballsCount; i++)
         {
             if (greenTurn == 0 && (i % ballColorsCount == greenTurn))
             {

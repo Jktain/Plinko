@@ -3,15 +3,50 @@ using UnityEngine.UI;
 
 public class TogglesManager : MonoBehaviour
 {
-    public Toggle[] togles = new Toggle[6];
+    public Toggle[] toggles = new Toggle[6];
 
-    public void ChooseToggle(bool numberOfToggle)
+    public static int ballsCount;
+
+    //public void ChooseToggle(bool numberOfToggle)
+    //{
+    //    for(int i = 0; i < togles.Length; i++)
+    //    {
+    //        togles[i].isOn = true;
+    //    }
+
+    //    //togles[numberOfToggle].isOn = false;
+    //}
+
+    public void ChooseToggle(int numberOfToggle)
     {
-        for(int i = 0; i < togles.Length; i++)
+        for (int i = 0; i < toggles.Length; i++)
         {
-            togles[i].isOn = true;
+            if(i == numberOfToggle)
+                toggles[i].isOn = false;
+            else
+                toggles[i].isOn = true;
         }
 
-        //togles[numberOfToggle].isOn = false;
+        switch (numberOfToggle)
+        {
+            case 0:
+                ballsCount = 3; 
+                break;
+            case 1:
+                ballsCount = 5;
+                break;
+            case 2: 
+                ballsCount = 10; 
+                break;
+            case 3:
+                ballsCount = 25;
+                break;
+            case 4:
+                ballsCount = 50;
+                break;
+            case 5:
+                ballsCount = 100;
+                break;
+        }
     }
 }
