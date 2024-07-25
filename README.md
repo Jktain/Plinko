@@ -1,6 +1,8 @@
 #Plinko
 Clone of game "Plinko" written using C# and Unity
+
 ![image](https://github.com/user-attachments/assets/a8357c22-e560-4674-9cdd-abde97bb2afd)
+
 
 ![image](https://github.com/user-attachments/assets/667bafb6-5c04-4f63-b8e2-e166dfb6494a)
 
