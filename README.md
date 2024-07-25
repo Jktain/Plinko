@@ -1,4 +1,5 @@
-#Plinko
+# Plinko
+
 Clone of game "Plinko" written using C# and Unity
 
 ![image](https://github.com/user-attachments/assets/a8357c22-e560-4674-9cdd-abde97bb2afd)
