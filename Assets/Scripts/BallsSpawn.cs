@@ -15,19 +15,18 @@ public class BallsSpawn : MonoBehaviour
     public GameObject mainGamePanel;
     public GameObject errorPanel;
 
-    public float ballSpawnPeriod;
-    private int ballColorsCount = 3;
-
-    private int greenTurn = 0;
-    private int yellowTurn = 1;
-    private int redTurn = 2;
-
     public Toggle greenToggle;
     public Toggle yellowToggle;
     public Toggle redToggle;
     public Toggle[] CountOfBallsToggles;
-    public static float minCashLimit;
 
+    private int ballColorsCount = 3;
+    private int greenTurn = 0;
+    private int yellowTurn = 1;
+    private int redTurn = 2;
+
+    public static float minCashLimit;
+    public float ballSpawnPeriod;
     public float RangeMinX = 0.2f;
     public float RangeMinY = 3f;
     public float RangeMaxX = 0.2f;

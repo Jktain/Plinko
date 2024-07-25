@@ -7,16 +7,6 @@ public class TogglesManager : MonoBehaviour
 
     public static int ballsCount;
 
-    //public void ChooseToggle(bool numberOfToggle)
-    //{
-    //    for(int i = 0; i < togles.Length; i++)
-    //    {
-    //        togles[i].isOn = true;
-    //    }
-
-    //    //togles[numberOfToggle].isOn = false;
-    //}
-
     public void ChooseToggle(int numberOfToggle)
     {
         for (int i = 0; i < toggles.Length; i++)
@@ -48,5 +38,7 @@ public class TogglesManager : MonoBehaviour
                 ballsCount = 100;
                 break;
         }
+        Debug.Log(ballsCount);
     }
+
 }
